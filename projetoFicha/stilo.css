@@ -1,0 +1,297 @@
+:root {
+  --background: #ffffff;
+  --text: #000000;
+  --surface: #ffffff;
+  --border: #000000;
+  --accent: #000000;
+  --accent-text: #ffffff;
+  --overlay: rgba(0, 0, 0, 0.45);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+body.tema-escuro {
+  --background: #171717;
+  --text: #f5f5f5;
+  --surface: #222222;
+  --border: #eeeeee;
+  --accent: #eeeeee;
+  --accent-text: #111111;
+  --overlay: rgba(0, 0, 0, 0.7);
+}
+
+body.tema-estilizado-claro {
+  --background: #f2e6cd;
+  --text: #39251d;
+  --surface: #f8eedb;
+  --border: #71372d;
+  --accent: #71372d;
+  --accent-text: #fff4e5;
+  --overlay: rgba(45, 24, 17, 0.55);
+}
+
+body.tema-estilizado-escuro {
+  --background: #222b36;
+  --text: #e0e6ed;
+  --surface: #2d3947;
+  --border: #182c46;
+  --accent: #182c46;
+  --accent-text: #e0e6ed;
+  --overlay: rgba(5, 12, 22, 0.75);
+}
+
+/* MENU */
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-button {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 7px;
+  cursor: pointer;
+}
+
+.menu-button span {
+  width: 23px;
+  height: 2px;
+  background-color: var(--text);
+}
+
+aside {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 235px;
+  height: 100vh;
+  background-color: var(--surface);
+  border-right: 2px solid var(--border);
+  padding-top: 65px;
+  transition: left 0.3s ease;
+  z-index: 2;
+}
+
+#menu-toggle:checked ~ aside {
+  left: 0;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav li {
+  padding: 11px 18px;
+}
+
+nav li a {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--text);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+nav li svg {
+  width: 19px;
+  height: 19px;
+  color: var(--text);
+  flex-shrink: 0;
+}
+
+nav li:hover {
+  text-decoration: underline;
+}
+
+/* CONTEÚDO PRINCIPAL */
+
+main {
+  min-height: 100vh;
+  padding: 65px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+main h1 {
+  margin-bottom: 10px;
+}
+
+main p {
+  max-width: 500px;
+  line-height: 1.45;
+}
+
+/* CONFIGURAÇÕES */
+
+.config-container {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.config-header {
+  width: 100%;
+  margin: 5px 0 18px;
+  padding: 12px;
+  background-color: var(--accent);
+  color: var(--accent-text);
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.config-section {
+  width: 100%;
+  padding: 17px;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.config-section h2 {
+  margin-bottom: 17px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid var(--border);
+  font-size: 1.2rem;
+}
+
+.config-option {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 17px;
+}
+
+.config-option:last-child {
+  margin-bottom: 0;
+}
+
+.config-option label {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.config-option select {
+  width: 100%;
+  max-width: 450px;
+  padding: 8px;
+  background-color: var(--background);
+  color: var(--text);
+  border: 1px solid var(--border);
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.config-option select:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+/* POP-UP */
+
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--overlay);
+  z-index: 10;
+}
+
+.popup-overlay.active {
+  display: flex;
+}
+
+.popup {
+  width: 90%;
+  max-width: 400px;
+  padding: 25px 18px;
+  background-color: var(--surface);
+  border: 2px solid var(--border);
+  color: var(--text);
+  text-align: center;
+}
+
+.popup h2 {
+  margin-bottom: 10px;
+  font-size: 26px;
+}
+
+.popup p {
+  line-height: 1.45;
+  margin-bottom: 18px;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.popup-buttons button {
+  padding: 8px 20px;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.popup-buttons button:hover {
+  background-color: var(--accent);
+  color: var(--accent-text);
+}
+
+/* TELAS MENORES */
+
+@media (max-width: 600px) {
+  main {
+    padding: 65px 12px;
+  }
+
+  .config-section {
+    padding: 13px;
+  }
+
+  .config-header {
+    font-size: 1.1rem;
+    padding: 10px;
+  }
+
+  .config-option {
+    margin-bottom: 14px;
+  }
+}
