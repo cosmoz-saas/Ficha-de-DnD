@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D&D Ficha teste</title>
+  <link rel="stylesheet" href="stilo.css">
+</head>
+
+<body>
+
+  <input type="checkbox" id="menu-toggle">
+
+  <label for="menu-toggle" class="menu-button">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+
+  <aside>
+    <nav>
+      <ul>
+        <li>
+          <a href="#" data-page="inicio">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m3 10 9-7 9 7"/>
+              <path d="M5 9v12h14V9"/>
+              <path d="M9 21v-6h6v6"/>
+            </svg>
+            <span data-translation="inicio">Início</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" data-page="personagens">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="10" cy="7" r="4"/>
+              <path d="M20 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+            <span data-translation="personagens">Personagens</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" data-page="compendio">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 21h12a2 2 0 0 0 2-2V7l-4-4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2"/>
+              <path d="M14 2v6h6"/>
+              <path d="M8 13h8"/>
+              <path d="M8 17h8"/>
+              <path d="M2 13h2"/>
+              <path d="M2 17h2"/>
+            </svg>
+            <span data-translation="compendio">Compêndio</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" data-page="configuracoes">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 7h-9"/>
+              <path d="M14 17H5"/>
+              <circle cx="17" cy="17" r="3"/>
+              <circle cx="7" cy="7" r="3"/>
+            </svg>
+            <span data-translation="configuracoes">Configurações</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" data-page="sair">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+              <path d="M16 17l5-5-5-5"/>
+              <path d="M21 12H9"/>
+            </svg>
+            <span data-translation="sair">Sair</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main id="conteudo">
+    <h1 data-translation="tituloInicio">Bem-vindo ao Início</h1>
+    <p data-translation="descricaoInicio">
+      Aqui você poderá acessar as principais funcionalidades
+      do seu criador de fichas de D&D.
+    </p>
+  </main>
+
+  <div class="popup-overlay" id="popup-overlay">
+    <div class="popup">
+      <h2 data-translation="popupTitulo">Já vai?</h2>
+      <p data-translation="popupDescricao">
+        Nós não vamos ficar bravos com você, apenas queremos
+        nos certificar de que tem certeza de que vai sair.
+      </p>
+      <div class="popup-buttons">
+        <button id="sair-button" data-translation="sair">Sair</button>
+        <button id="ficar-button" data-translation="ficar">Ficar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
